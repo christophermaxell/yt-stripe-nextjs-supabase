@@ -1,6 +1,6 @@
 'use client';
 
-import { Inter } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from '@/contexts/AuthContext';
 import TopBar from '../components/TopBar';
@@ -9,7 +9,7 @@ import { Analytics } from "@vercel/analytics/react"
 // import { PostHogProvider } from '@/contexts/PostHogContext';
 // import { PostHogErrorBoundary } from '@/components/PostHogErrorBoundary';
 
-const inter = Inter({ subsets: ['latin'] });
+const geist = Geist({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={geist.className}>
         <Analytics mode="auto" />
         {/* <PostHogErrorBoundary>
           <PostHogProvider> */}

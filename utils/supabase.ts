@@ -1,29 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 
-if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
-  throw new Error('Missing env.NEXT_PUBLIC_SUPABASE_URL');
-}
-if (!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-  throw new Error('Missing env.NEXT_PUBLIC_SUPABASE_ANON_KEY');
-}
+const supabaseUrl = 'https://zynjaspwqtygnukbtysr.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp5bmphc3B3cXR5Z251a2J0eXNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2Nzk5MjEsImV4cCI6MjA1NjI1NTkyMX0.obnTzhzwj87-FP3s4zApbP9GIXpQkuoXHJ_ie2D6Ubo';
 
-export const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-  {
-    auth: {
-      persistSession: true,
-      autoRefreshToken: true,
-    },
-    global: {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-      },
-    },
-    db: {
-      schema: 'public'
-    }
+export const supabase = createClient(supabaseUrl, supabaseKey, {
+  auth: {
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true
   }
-); 
+}); 

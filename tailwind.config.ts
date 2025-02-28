@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   darkMode: 'media',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,40 +11,39 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#A78BFA', // Violet-400: Soft lavender
-          light: '#C4B5FD',   // Violet-300: Light lavender
-          dark: '#8B5CF6',    // Violet-500: Medium lavender
+          DEFAULT: '#0070F3',
+          dark: '#0051F3',
         },
-        danger: {
-          DEFAULT: '#DC2626', // Red-600: Clear red
-          light: '#F87171',   // Red-400: Soft red
-          dark: '#B91C1C',    // Red-700: Deep red
-        },
-        neutral: {
-          DEFAULT: '#F8FAFC', // Slate-50: Crisp light
-          dark: '#1E293B',    // Slate-800: Rich dark
-          darker: '#0F172A',  // Slate-900: Deep dark
-        },
-        text: {
-          DEFAULT: '#0F172A', // Slate-900: Sharp text
-          light: '#64748B',   // Slate-500: Soft text
-          dark: '#F8FAFC',    // Slate-50: Light text
+        secondary: {
+          DEFAULT: '#7928CA',
+          dark: '#6928CA',
         },
         surface: {
-          light: '#FFFFFF',   // Pure white
-          dark: '#1E293B',    // Slate-800: Rich surface
+          light: '#FFFFFF',
+          dark: '#1A1B26',
         },
-        accent: {
-          DEFAULT: '#38BDF8', // Sky-400: Fresh blue
-          light: '#7DD3FC',   // Sky-300: Soft blue
-          dark: '#0EA5E9',    // Sky-500: Deep blue
-        }
+        text: {
+          DEFAULT: '#2F3E46',
+          dark: '#F8F9FA',
+        },
+        neutral: {
+          DEFAULT: '#F8F9FA',
+          dark: '#2F3E46',
+          darker: '#1A1B26',
+        },
+        danger: '#FF0000',
       },
       boxShadow: {
-        'subtle': '0 1px 3px rgba(0,0,0,0.05)',
-        'hover': '0 4px 6px -1px rgba(139, 92, 246, 0.1), 0 2px 4px -1px rgba(139, 92, 246, 0.06)', // Softer violet shadow
-      }
+        subtle: '0 2px 4px rgba(0,0,0,0.1)',
+        hover: '0 4px 8px rgba(0,0,0,0.1)',
+      },
+      scale: {
+        '102': '1.02',
+        '98': '0.98',
+      },
     },
   },
   plugins: [],
-} satisfies Config;
+}
+
+export default config;
